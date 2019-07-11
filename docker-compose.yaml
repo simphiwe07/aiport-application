@@ -1,11 +1,34 @@
 version: '3'
 services: 
   app01:
-    build: ./app01
+    build: 
+      context: ./app01
+      dockerfile: Dockerfile
+    image: app1
+    volumes: 
+      - app01:/home/simphiwe
+    container_name: app01
     ports: 
-      - "8000:8000"
+      - "8001:8001"
+    networks:
+      - network1
   
   app02:
-    build: ./app02
+    build: 
+      context: ./app02
+      dockerfile: Dockerfile
+    image: app2
+    volumes: 
+      - app01:/home/simphiwe
+    container_name: app02
     ports: 
-      - "8080:8080"
+      - "8002:8002"
+    networks:
+      - network2
+
+networks:
+  network1:
+  network2:
+
+volumes:
+  app01:

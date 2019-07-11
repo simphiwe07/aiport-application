@@ -1,4 +1,4 @@
 FROM java:8
-WORKDIR /app2
-COPY airports-assembly-1.1.0.jar /app2
-RUN java -jar /app2/airports-assembly-1.1.0.jar
+WORKDIR /
+ADD airports-assembly-1.1.0.jar airports-assembly-1.1.0.jar
+CMD ["java", "-jar", "airports-assembly-1.1.0.jar"]
