@@ -1,0 +1,11 @@
+version: '3'
+services: 
+  app01:
+    build: ./app01
+    ports: 
+      - "8000:8000"
+  
+  app02:
+    build: ./app02
+    ports: 
+      - "8080:8080"
