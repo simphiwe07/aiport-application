@@ -1,28 +1,28 @@
 version: '3'
 services: 
-  app01:
+  airports:
     build: 
-      context: ./app01
+      context: ./airports
       dockerfile: Dockerfile
-    image: app1
+    image: airports
     volumes: 
-      - app01:/home/simphiwe/app01
-    container_name: app01
+      - airports:/home/simphiwe/airports
+    container_name: airports
     ports: 
-      - "8001:8001"
+      - "8000:8000"
     networks:
       - network1
   
-  app02:
+  countries:
     build: 
-      context: ./app02
+      context: ./countries
       dockerfile: Dockerfile
-    image: app2
+    image: countries
     volumes: 
-      - app02:/home/simphiwe/app02
-    container_name: app02
+      - countries:/home/simphiwe/countries
+    container_name: countries
     ports: 
-      - "8002:8002"
+      - "8080:8080"
     networks:
       - network2
 
@@ -31,5 +31,5 @@ networks:
   network2:
 
 volumes:
-  app01:
-  app02:
+  airports:
+  countries:
