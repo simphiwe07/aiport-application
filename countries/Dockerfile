@@ -1,4 +1,6 @@
 FROM java:8
-WORKDIR /
-ADD countries-assembly-1.0.1.jar countries-assembly-1.0.1.jar
+RUN mkdir -p /build
+COPY countries-assembly-1.0.1.jar /build/countries-assembly-1.0.1.jar
+RUN cd /build
+WORKDIR /build
 CMD ["java", "-jar", "countries-assembly-1.0.1.jar"]
