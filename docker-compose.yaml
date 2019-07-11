@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: app1
     volumes: 
-      - app01:/home/simphiwe
+      - app01:/home/simphiwe/app01
     container_name: app01
     ports: 
       - "8001:8001"
@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     image: app2
     volumes: 
-      - app01:/home/simphiwe
+      - app02:/home/simphiwe/app02
     container_name: app02
     ports: 
       - "8002:8002"
@@ -32,3 +32,4 @@ networks:
 
 volumes:
   app01:
+  app02:
