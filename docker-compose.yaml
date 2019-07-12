@@ -3,33 +3,18 @@ services:
   airports:
     build: 
       context: ./airports
-      dockerfile: Dockerfile
+      dockerfile: "Dockerfile"
     image: airports
-    volumes: 
-      - airports:/home/simphiwe/airports
-    container_name: airports
     ports: 
-      - "8000:8000"
-    networks:
-      - network1
+      - 8000:8000
+    volumes: 
+      - ./airports:/build
+    
   
   countries:
     build: 
       context: ./countries
-      dockerfile: Dockerfile
+      dockerfile: "Dockerfile"
     image: countries
-    volumes: 
-      - countries:/home/simphiwe/countries
-    container_name: countries
     ports: 
-      - "8001:8001"
-    networks:
-      - network2
-
-networks:
-  network1:
-  network2:
-
-volumes:
-  airports:
-  countries:
+      - 8080:8080
