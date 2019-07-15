@@ -18,3 +18,15 @@ services:
     image: countries
     ports: 
       - "8001:8080"
+
+  mynginx:
+    build: 
+      context: ./myNginx
+      dockerfile: "Dockerfile"
+    image: mynginx
+    ports:
+      - "80:80"
+    links:
+      - airports
+      - countries
+    
