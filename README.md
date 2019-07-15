@@ -1,5 +1,5 @@
 # airport-application
 
-- To application clone this repo to your machine
+- To run this application locally, clone this repo to your machine and do the command below:
 - cd airport-application
 - docker-compose up
